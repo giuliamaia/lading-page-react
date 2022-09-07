@@ -5,14 +5,13 @@ interface TimelineItem {
     numberSection: number,
     title: string,
     desc1: string,
-    desc2: string
+    desc2: string,
+    reverse: boolean
 }
 export default function TimelineItem(props: TimelineItem) {
-    return <section className='timeline-item'>
+    return <section className='timeline-item' style={props.reverse ? {flexDirection: 'row-reverse', textAlign: 'right'} : {}}>
         <article className='timeline-item__card'>
-            <div className='timeline-item__card__text'>
-                {props.textCard}
-            </div>
+            {props.textCard}
         </article>
         <article className='timeline-item__divider'>
             <div className='timeline-item__divider__line'></div>
@@ -21,8 +20,8 @@ export default function TimelineItem(props: TimelineItem) {
         </article>
         <article className='timeline-item__description'>
             <h3>{props.title}</h3>
-            <h6>{props.desc1}</h6>
-            <h6>{props.desc2}</h6>
+            <h6 className='timeline-item__description__1'>{props.desc1}</h6>
+            <h6 className='timeline-item__description__2'>{props.desc2}</h6>
         </article>
     </section>
 }

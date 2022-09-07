@@ -115,6 +115,23 @@ function Home() {
                             title='Grafic Designer'
                             desc1='Team Orio Designer Team'
                             desc2='March 2019 - August 2019'
+                            reverse={false}
+                        />
+                        <TimelineItem
+                            textCard='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vitae sollicitudin augue, vitae vulputate enim. Quisque tincidunt libero ut mi ultrices, in varius tortor mattis.'
+                            numberSection={2}
+                            title='Grafic Designer'
+                            desc1='Team Orio Designer Team'
+                            desc2='March 2019 - August 2019'
+                            reverse={true}
+                        />
+                        <TimelineItem
+                            textCard='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vitae sollicitudin augue, vitae vulputate enim. Quisque tincidunt libero ut mi ultrices, in varius tortor mattis.'
+                            numberSection={3}
+                            title='Grafic Designer'
+                            desc1='Team Orio Designer Team'
+                            desc2='March 2019 - August 2019'
+                            reverse={false}
                         />
                     </main>
                 </div>

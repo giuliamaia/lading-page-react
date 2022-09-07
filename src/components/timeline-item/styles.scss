@@ -9,6 +9,99 @@
 
     &__card {
         width: 40%;
-        padding: 10px;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0px 0px 5px #8080804f;
+    }
+
+    &__divider {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        &__line {
+            width: 3px;
+            height: 100px;
+            background-color: variables.$main-color;
+        }
+        &__circle {
+            padding: 10px 18px;
+            border: 3px solid variables.$main-color;
+            border-radius: 50%;
+            color: variables.$main-color;
+            font-weight: bold;
+        }
+    }
+
+    &__description {
+        width: 40%;
+        padding: 20px;
+        &>h3 {
+            color: rgba(black, 75%);
+            margin-bottom: 5px;
+        }
+
+        &__1 {
+            color: variables.$main-color;
+            font-size: 12px;
+            margin-bottom: 5px;
+        }
+
+        &__2 {
+            color: rgba(black, 65%);
+        }
+    }
+
+    &:hover {
+        .timeline-item {
+            &__card{
+                background-color: variables.$main-color;
+                color: white;
+            }
+            &__divider__circle {
+                background-color: variables.$main-color;
+                color: white;
+            }
+        }
+    }
+
+    @include mixins.for-tablet-landscape-up {
+        &__card {
+            width: 30%;
+            font-size: 14px;
+        }
+
+        &__description {
+            width: 30%;
+        }
+    }
+
+    @include mixins.for-phone-only {
+        &__card {
+            width: 25%;
+            font-size: 12px;
+        }
+
+        &__divider {
+            &__circle {
+                padding: 10px 15px;
+                font-size: 12px;
+            }
+            &__line {
+                height: 150px;
+            }
+        }
+
+        &__description {
+            width: 25%;
+
+            &>h3 {
+                font-size: 16px;
+            }
+    
+            &__1 {
+                font-size: 10px;
+            }
+        }
     }
 }
