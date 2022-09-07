@@ -1,0 +1,22 @@
+@use '../../utils/sass/variables';
+@use '../../utils/sass/mixins';
+
+
+.target {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &__icon {
+        color: #636363;
+    }
+
+    &__info {
+        margin-left: 10px;
+
+        &__number {
+            color: variables.$main-color;
+        }
+
+    }
+}

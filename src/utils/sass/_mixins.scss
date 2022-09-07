@@ -1,0 +1,82 @@
+@use './_variables';
+
+// ANIMATIONS
+@mixin kfhorizontal($name, $value) {
+    @keyframes #{$name} {
+        from {
+            opacity: 0;
+            transform: translateX($value);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+}
+
+@mixin kfvertical($name, $value) {
+    @keyframes #{$name} {
+        from {
+            opacity: 0;
+            transform: translateY($value);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+}
+
+//RESPONSIVIDADE
+@mixin for-phone-only {
+    @media (max-width: 599px) {
+        @content;
+    }
+}
+
+@mixin for-tablet-portrait-up {
+    @media (max-width: 600px) {
+        @content;
+    }
+}
+
+@mixin for-tablet-landscape-up {
+    @media (max-width: 960px) {
+        @content;
+    }
+}
+
+@mixin for-desktop-up-width {
+    @media (max-width: 1200px) {
+        @content;
+    }
+}
+
+@mixin for-desktop-up-height {
+    @media (min-height: 720px) {
+        @content;
+    }
+}
+
+@mixin for-big-desktop-up {
+    @media (max-width: 1800px) {
+        @content;
+    }
+}
+
+@mixin for-custom-screen($width) {
+    @media (max-width: $width) {
+        @content;
+    }
+}
+
+@mixin z-index($key) {
+    z-index: z-index($key);
+}
+
+//FUNCTIONS
+@function z-index($key) {
+    @return map-get($map: variables.$z-index, $key: $key);
+}

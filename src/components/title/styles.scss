@@ -1,0 +1,42 @@
+@use '../../utils/sass/variables';
+
+.title {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+
+    &>h5 {
+        color: variables.$main-color;
+    }
+
+    &>h5,
+    >h2,
+    &__line {
+        margin-bottom: 10px;
+    }
+
+    &__line {
+        display: flex;
+        justify-content: space-between;
+        width: 40px;
+
+        &__part1,
+        &__part2,
+        &__part3 {
+            height: 2px;
+            background-color: variables.$main-color;
+        }
+
+        &__part1 {
+            width: 25px;
+        }
+
+        &__part2 {
+            width: 5px;
+        }
+
+        &__part3 {
+            width: 3px;
+        }
+    }
+}

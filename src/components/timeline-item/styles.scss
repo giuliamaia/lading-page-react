@@ -1,0 +1,14 @@
+@use '../../utils/sass/variables';
+@use '../../utils/sass/mixins';
+
+.timeline-item {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    &__card {
+        width: 40%;
+        padding: 10px;
+    }
+}

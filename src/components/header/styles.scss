@@ -1,0 +1,94 @@
+@use '../../utils/sass/variables';
+@use '../../utils/sass/mixins';
+
+.header {
+    height: variables.$header-height;
+    @include mixins.z-index(header);
+
+    &>.container {
+        height: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .logo {
+            width: 120px;
+            opacity: 0;
+            animation: showlogo 1s forwards ease-in-out 0.2s;
+            @include mixins.kfvertical(showlogo, -30px);
+        }
+
+        .buttonMenu {
+            display: none;
+        }
+
+        .nav {
+            &__list {
+                display: flex;
+                opacity: 0;
+                animation: shownav 1s forwards ease-in-out 0.8s;
+                @include mixins.kfvertical(shownav, -30px);
+                gap: 10px;
+
+                &>li>a {
+                    text-decoration: none;
+                    color: white;
+
+                    &:hover {
+                        text-decoration: none;
+                        padding-bottom: 3px;
+                        opacity: 0.7;
+                        transition: opacity 0.5s;
+                    }
+                }
+            }
+        }
+    }
+
+    @include mixins.for-phone-only {
+        &>.container {
+            .nav {
+                position: absolute;
+                width: 100vw;
+                top: variables.$header-height;
+                right: 0px;
+                max-height: 0;
+                overflow-y: hidden;
+                transition: max-height 0.5s ease-in-out;
+                @include mixins.z-index(header-nav);
+
+                &__list {
+                    display: block;
+                    animation: shownav 0.2s forwards ease-in-out;
+
+                    &>li {
+                        box-sizing: border-box;
+                        height: 60px;
+                        padding: 20px;
+                        background-color: variables.$main-color;
+                        text-align: center;
+
+                        &>a {
+                            color: white;
+                        }
+                    }
+                }
+            }
+
+            .open {
+                max-height: 500px;
+                @include mixins.z-index(header-nav);
+            }
+
+            .buttonMenu {
+                display: flex;
+                background-color: transparent;
+            }
+        }
+    }
+
+    @include mixins.for-tablet-landscape-up {
+        background-image: url('../../assets/images/background.png');
+        background-size: cover;
+    }
+}
